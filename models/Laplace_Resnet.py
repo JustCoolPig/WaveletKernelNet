@@ -34,9 +34,9 @@ class Laplace_fast(nn.Module):
         if kernel_size % 2 == 0:
             self.kernel_size = self.kernel_size + 1
 
-        self.a_ = nn.Parameter(torch.linspace(1, 10, out_channels)).view(-1, 1)
+        self.a_ = nn.Parameter(torch.linspace(1, 10, out_channels.view(-1, 1)))
 
-        self.b_ = nn.Parameter(torch.linspace(0, 10, out_channels)).view(-1, 1)
+        self.b_ = nn.Parameter(torch.linspace(0, 10, out_channels.view(-1, 1)))
 
     def forward(self, waveforms):
 
